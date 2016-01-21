@@ -1,10 +1,8 @@
 import javax.activation.URLDataSource
-import scala.annotation.tailrec
 
 object Day01 {
-
   val input = scala.io.Source.fromInputStream(
-    new URLDataSource(getClass().getResource("Day01-input.txt")).getInputStream()).mkString
+    new URLDataSource(getClass.getResource("Day01-input.txt")).getInputStream).mkString
                                                   //> input  : String = (((())))()((((((((())()(()))(()((((()(()(((()((()((()(()()
                                                   //| ()()()))(((()(()((((((((((())(()()((())()(((())))()(()(()((()(()))(()()()()(
                                                   //| (()((()(((()()(((((((()()())()((((()()(((((()(())()(())((())()()))()((((((((
@@ -41,7 +39,7 @@ object Day01 {
   def findFloor(puzzle: String, currentFloor: Int = 0, floorToFind: Int, position: Int = 0): Option[Int] = {
     if (currentFloor == floorToFind)
       Some(position)
-    else if (puzzle.isEmpty())
+    else if (puzzle.isEmpty)
       None
     else
       findFloor(
